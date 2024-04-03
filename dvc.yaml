@@ -1,15 +1,36 @@
 stages:
   download:
     cmd: python3 download.py
-
+    params:
+      - download.base_url
+      - download.year
+      - download.num_files
+      - download.threshold
+    outs:
+      - data1
+  
   prepare:
     cmd: python3 prepare.py   
-
+    params:
+      - prepare.num_files
+    deps:
+      - data1
+    outs:
+      - data/Monthly_mean.csv
+  
   process:
     cmd: python3 process.py
-
+    params:
+      - process.file
+    deps:
+      - data1
+    outs:
+      - data/predicted_Monthly_mean.csv
+  
   evaluate:
     cmd: python3 evaluate.py
-
+    deps:
+      - data/Monthly_mean.csv
+      - data/predicted_Monthly_mean.csv
 metrics:
   - metrics.json

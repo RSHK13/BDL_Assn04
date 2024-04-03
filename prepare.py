@@ -15,7 +15,7 @@ def extract_columns(df:pd.DataFrame):
     Monthly_df.to_csv('data/Monthly_mean.csv', index=False)
 
 def convert_to_df(file_idx):
-    df = pd.read_csv(f'data/csv_{file_idx}.csv', dtype="str")
+    df = pd.read_csv(f'data1/csv_{file_idx}.csv', dtype="str")
     return df
 
 if __name__ == '__main__':

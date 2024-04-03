@@ -30,7 +30,7 @@ def download_url(base_url, year, output_file, max_files, threshold):
         res = requests.get(link)
         if res.status_code == 200:
             file_name = link.split('/')[-1]
-            file_path = f"data/csv_{index}.csv"
+            file_path = f"data1/csv_{index}.csv"
             with open(file_path, "wb") as f:
                 for chunk in res.iter_content(chunk_size=1024):
                     f.write(chunk)
