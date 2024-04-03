@@ -1,0 +1,12 @@
+download:
+  base_url: 'https://www.ncei.noaa.gov/data/local-climatological-data/access/'
+  year: 2023
+  num_files: 3
+  threshold: 45
+
+
+prepare:
+  num_files: 1
+
+process:
+  num_files: 1

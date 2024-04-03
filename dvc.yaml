@@ -1,0 +1,15 @@
+stages:
+  download:
+    cmd: python3 download.py
+
+  prepare:
+    cmd: python3 prepare.py   
+
+  process:
+    cmd: python3 process.py
+
+  evaluate:
+    cmd: python3 evaluate.py
+
+metrics:
+  - metrics.json
