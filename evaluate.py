@@ -4,6 +4,8 @@ from sklearn.metrics import r2_score
 def compute_r2(computed_mean, actual_mean):
     print("R2 score of the Monthly Average Temperature is : ")
     print(r2_score(computed_mean, actual_mean))
+    with open("metrics.json", "w") as f:
+        json.dump(r2_score(computed_mean,actual_mean),f)
 
 def extract_data():
     predicted_mean_df = pd.read_csv('data/predicted_Monthly_mean.csv')
